@@ -1,1 +1,2 @@
 # Kisan-Seva
+Our platform, 'Kisan Seva', leverages advanced machine learning to provide personalized crop yield predictions recommendations based on climate and land size, optimizing profitability for farmers. Additionally, our online marketplace offers high-quality agricultural products at competitive prices, streamlining procurement and supporting effective farming operations. Through these services, we empower farmers, enhance agricultural practices, and promote sustainable growth in the farming industry.
