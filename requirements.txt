@@ -1,0 +1,14 @@
+# install the below libraries using
+# pip install -r requirements.txt
+
+Flask
+pandas
+pymongo
+flask-bcrypt
+bson
+razorpay
+ssl
+certifi
+numpy
+scikit-learn
+joblib

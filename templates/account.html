@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Account Info | Kisan Seva">
+    <meta name="lang" content="en">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="icon" href="/static/index/favicon.ico" />
+
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!--Search Box & NavBar functionality-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--for html background-->
+    <script src="https://cdn.jsdelivr.net/npm/granim@2.0.0/dist/granim.min.js"></script>
+
+    <!--CSS files-->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="/static/index/kisan_seva_logo.webp">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/products_home.css">
+    <style>
+        .transaction-card {
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .transaction-card .card-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+        }
+
+        .transaction-card .card-body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .transaction-card .card-title {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .transaction-card .card-text {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-container">
+        <header>
+            <div class="accessibility_top_nav">
+                <div class="wrapper">
+                    <div class="region region-header-top">
+                        <div id="block-cmf-content-header-region-block" class="block block-cmf-content first last odd">
+                            <div class="wrapper common-wrapper" style="background-color: lightgrey;">
+                                <div class="container common-container">
+                                    <div class="common-left clearfix" style="height: 85px;">
+                                        <!-- Updated the ul style to include centering properties -->
+                                        <ul
+                                            style="display: flex; justify-content: center; align-items: center; height: 100%; margin: 0; padding: 0;">
+                                            <li style="list-style: none;">
+                                                <!-- Added a list item element for proper HTML structure -->
+                                                <a href="/">
+                                                    <img src="/static/index/kisan_seva_logo.webp" alt="kisan seva logo"
+                                                        style="height: 70px; border-radius: 100px;">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Page Navigation goes here -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container">
+                    <a class="navbar-brand">Kisan Seva</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/" aria-label="Homepage">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    About Us
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="/mission"
+                                            aria-label="Our Mission & Vision">Mission & Vision</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="/about" aria-label="About">Our Team</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Services
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="/predict" aria-label="Yield Prediction">Yield
+                                            Prediction</a></li>
+                                    <li><a class="dropdown-item" href="/marketplace" aria-label="Shop">Shop</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/articles_home" aria-label="Articles Homepage">Articles</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto">
+
+                            <!-- Language Dropdown
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLang" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Language
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownLang">
+                                    <li><a class="dropdown-item"
+                                            href="https://kisanseva-shop.translate.goog/?_x_tr_sl=en&_x_tr_tl=hi&_x_tr_hl=en-US&_x_tr_pto=wapp">हिंदी</a>
+                                    </li>
+                                </ul>
+                            </li> -->
+
+                            <!-- Account Info and Logout Buttons -->
+                            {% if session.logged_in %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('account') }}">
+                                    <i class="bi bi-person-circle"></i> Account
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link logout-button" href="{{ url_for('logout') }}">
+                                    <i class="bi bi-box-arrow-right"></i> Logout
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link btn-signin" href="/login">Sign In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-signup ms-3" href="/signup" role="button">Sign Up</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+        <main class="content-wrap">
+            <div class="container mt-5">
+
+                <!-- Flash messages section -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <div class="alert-messages">
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endwith %}
+
+                <h2>Account Information</h2>
+                <form method="POST" action="{{ url_for('update_account') }}">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" value="{{ user.username }}" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="first_name" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name"
+                            value="{{ user.first_name }}" required>
+                        <div class="invalid-feedback">
+                            Please enter your first name.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="last_name" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name"
+                            value="{{ user.last_name }}" required>
+                        <div class="invalid-feedback">
+                            Please enter your last name.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" value="{{ user.address }}"
+                            required>
+                        <div class="invalid-feedback">
+                            Please enter your address.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}"
+                            placeholder="you@example.com" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="contact" name="phone" value="{{ user.phone }}"
+                            placeholder="+91" maxlength="10" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid 10-digit phone number.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+
+
+                <div class="container">
+                    <h3 class="mt-5 mb-4">Transaction History</h3>
+                    <div class="row">
+                        {% for transaction in user.transactions %}
+                        <div class="col-md-6">
+                            <div class="card transaction-card">
+                                <div class="card-header">
+                                    Transaction ID: {{ transaction.transaction_id }}
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Product Name: {{ transaction.product_name }}</h5>
+                                    <p class="card-text"><strong>Amount:</strong> ₹ {{ transaction.amount }}
+                                    </p>
+                                    <p class="card-text"><strong>Date/Time:</strong> {{ transaction.timestamp }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                const phoneInput = document.getElementById("contact");
+
+                phoneInput.addEventListener("input", function () {
+                    // Check for both validity and length
+                    if (phoneInput.value.length !== 10 || isNaN(phoneInput.value)) {
+                        phoneInput.classList.add("is-invalid");
+                    } else {
+                        phoneInput.classList.remove("is-invalid");
+                    }
+                });
+            </script>
+            <script>
+                const emailInput = document.getElementById("email");
+                const zipInput = document.getElementById("zip");
+
+                emailInput.addEventListener("input", function () {
+                    if (!emailInput.checkValidity()) {
+                        emailInput.classList.add("is-invalid");
+                    } else {
+                        emailInput.classList.remove("is-invalid");
+                    }
+                });
+            </script>
+        </main>
+
+
+        <!-- footer-->
+        <footer class="footer mt-auto">
+            <div class="container text-center text-md-left">
+                <div class="row">
+                    <div class="col-md-3 footer-column">
+                        <h5>Services</h5>
+                        <div>
+                            <a href="/predict">Yield Prediction</a>
+                        </div>
+                        <div>
+                            <a href="/marketplace">Shop</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 footer-column">
+                        <h5>About</h5>
+                        <div>
+                            <a href="/about">Our Team</a>
+                        </div>
+                        <div>
+                            <a href="/mission">Mission & Vision</a>
+                        </div>
+                        <div>
+                            <a href="https://forms.gle/iRf3eKC6bq9XV21B7">Feedback</a>
+                        </div>
+                        <div>
+                            <a href="https://forms.gle/Gb3K34tQgGyLmazL8">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 footer-column">
+                        <h5>Legal</h5>
+                        <div>
+                            <a href="/privacy_policy">Privacy Policies</a>
+                        </div>
+                        <div>
+                            <a href="/terms_and_conditions">Term & Conditions</a>
+                        </div>
+                        <div>
+                            <a href="/disclaimer">Disclaimer</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 footer-column">
+                        <h5>Connect</h5>
+                        <div class="social-icons">
+                            <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png"
+                                    alt="Facebook" style="width: 24px;"></a>
+                            <a href="https://twitter.com/kisanseva24"><img
+                                    src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png" alt="Twitter"
+                                    style="width: 24px;"></a>
+                            <a href="https://www.instagram.com/kisanseva.shop/"><img
+                                    src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"
+                                    style="width: 24px;"></a>
+                            <a href="https://www.youtube.com/@Kisanseva-s7s"><img src="https://img.icons8.com/ios-filled/50/ffffff/youtube.png" alt="Youtube"
+                                    style="width: 24px;"></a>
+                        </div>
+                        <a href="#">Newsletter</a>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <p>Copyright © 2024 Kisan Seva. All rights reserved.</p>
+                    <!-- <p>Total Visits: {{ visitor_count }}</p> -->
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

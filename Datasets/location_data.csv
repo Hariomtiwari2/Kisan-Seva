@@ -1,0 +1,11 @@
+location,nitrogen,phosphorus,potassium,temperature,humidity,ph,rainfall
+"Delhi, India",120.5,50.2,180.1,28.7,65.4,7.2,0
+"Bangalore, India",105.3,42.1,168.9,25.8,78.2,6.8,80
+"Mumbai, India",26,27,10,28.06,92.9,6.07,114.13
+"Kolkata, India",90,42,43,20.87,82.2,6.5,150.93
+"Chennai, India",99,92,47,28.12,77.48,6.3,103.5
+"Hyderabad, India",55,35,50,30,70,7,70
+"Pune, India",50,30,45,26,65,6.8,80
+"Ahmedabad, India",127,37,18,24.8,76.3,7,91.9
+"Jaipur, India",13,67,18,29.3,45.9,6.4,165.4
+"Lucknow, India",55,30,55,23,65,8,110

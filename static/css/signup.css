@@ -1,0 +1,161 @@
+@media (max-width: 600px) {
+
+    #canvas-basic {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        /* Places the canvas behind other content */
+    }
+
+    .gradient-background {
+        background: var(--gradient);
+        height: 100%;
+        /* Adjust the height for smaller screens */
+        width: 100%;
+        /* Adjust the width for smaller screens */
+        transition: background 0.5s;
+
+    }
+
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    #canvas-basic {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        /* Places the canvas behind other content */
+    }
+
+    .gradient-background {
+        background: var(--gradient);
+        height: 100%;
+        /* Adjust the height for smaller screens */
+        width: 100%;
+        /* Adjust the width for smaller screens */
+        transition: background 0.5s;
+
+    }
+
+
+}
+
+@media (min-width: 1024px) and (max-width: 1650px) {
+
+    #canvas-basic {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        /* Places the canvas behind other content */
+    }
+
+    .gradient-background {
+        background: var(--gradient);
+        height: 100%;
+        /* Adjust the height for smaller screens */
+        width: 100%;
+        /* Adjust the width for smaller screens */
+        transition: background 0.5s;
+
+    }
+
+
+}
+
+@media (min-width: 1658px) {
+
+    #canvas-basic {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        /* Places the canvas behind other content */
+    }
+
+    .gradient-background {
+        background: var(--gradient);
+        height: 100%;
+        /* Adjust the height for smaller screens */
+        width: 100%;
+        /* Adjust the width for smaller screens */
+        transition: background 0.5s;
+
+    }
+
+
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#canvas-basic {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.login-box .form-label {
+    font-weight: 500;
+}
+
+.login-box .form-control {
+    border-radius: 5px;
+}
+
+.login-box .btn {
+    border-radius: 5px;
+}
+
+.login-box p {
+    margin-top: 10px;
+}
+
+.login-box p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-box p a:hover {
+    text-decoration: underline;
+}

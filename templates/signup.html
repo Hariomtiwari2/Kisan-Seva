@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <meta name="description"
+        content="Sign Up | Kisan Seva">
+    <meta name="lang" content="en">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="canonical" href="https://kisanseva.shop/login">
+    <link rel="icon" href="/static/index/favicon.ico"/>
+
+    <!-- Structured Data Markup js -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "Kisan Seva",
+            "url": "https://kisanseva.shop/login",
+            "logo": "https://kisanseva.shop/kisan_seva_logo"
+        }
+    </script>
+
+    <!-- Social Media Meta Tags -->
+    <!--Instagram-->
+    <meta property="og:image" content="https://kisanseva.shop/kisan_seva_logo" />
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Instagram">
+    <meta property="og:url" content="https://www.instagram.com/kisanseva.shop/">
+    <meta property="og:title" content="Kisan Seva on Instagram">
+    <meta property="og:description" content="Follow Kisan Seva on Instagram for updates and insights.">
+    <!--Twitter-->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://x.com/kisanseva24">
+    <meta property="twitter:title" content="Kisan Seva - Empowering Indian Farmers">
+    <meta property="twitter:description"
+        content="Welcome to Kisan Seva, a platform dedicated to supporting Indian farmers with valuable resources and tools to improve agricultural practices and access essential services.">
+    <meta property="twitter:image" content="https://kisanseva.shop/kisan_seva_logo">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/signup.css">
+    <!-- Granim.js for background -->
+    <script src="https://cdn.jsdelivr.net/npm/granim@2.0.0/dist/granim.min.js"></script>
+</head>
+
+<body>
+    <canvas id="canvas-basic"></canvas>
+    <div class="container">
+        <div class="login-box">
+            <h3>Sign Up</h3>
+            <form action="/signup" method="POST">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div id="send-otp-section" class="form-group">
+                    <button type="button" id="send-otp" class="btn btn-primary w-100">Send OTP</button>
+                </div>
+                <div id="otp-section" class="form-group" style="display: none;">
+                    <label for="otp" class="form-label">Enter OTP</label>
+                    <input type="number" name="otp" id="otp" class="form-control form-label" required>
+                    <button type="button" id="verify-otp" class="btn btn-primary w-100 mt-3">Verify OTP</button>
+                </div>
+                <div id="signup-button-section" class="form-group" style="display: none;">
+                    <button type="submit" class="btn btn-primary w-100 mt-3">Sign Up</button>
+                </div>
+            </form>
+            <p>Already have an account? <a href="/login">Log in</a></p>
+        </div>
+    </div>
+    <!-- Bootstrap Modal for displaying flash messages -->
+    <div class="modal fade" id="flashModal" tabindex="-1" aria-labelledby="flashModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="flashModalLabel">Notification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var alertExists = document.querySelectorAll('.alert').length > 0;
+            if (alertExists) {
+                var flashModal = new bootstrap.Modal(document.getElementById('flashModal'), {});
+                flashModal.show();
+            }
+        });
+    </script>
+    <script>
+        document.getElementById('send-otp').addEventListener('click', function () {
+            var email = document.getElementById('email').value;
+            if (email) {
+                fetch("{{ url_for('send_otp') }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: email })
+                }).then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            alert('OTP sent to your email');
+                            document.getElementById('send-otp-section').style.display = 'none';
+                            document.getElementById('otp-section').style.display = 'block';
+                        } else {
+                            alert('Failed to send OTP. Please try again.');
+                        }
+                    });
+            } else {
+                alert('Please enter a valid email address');
+            }
+        });
+
+        document.getElementById('verify-otp').addEventListener('click', function () {
+            var otp = document.getElementById('otp').value;
+            var email = document.getElementById('email').value;
+            if (otp && email) {
+                fetch("{{ url_for('verify_otp') }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ otp: otp, email: email })
+                }).then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            alert('OTP verified successfully. Please complete your registration.');
+                            document.getElementById('otp-section').style.display = 'none';
+                            document.getElementById('signup-button-section').style.display = 'block';
+                        } else {
+                            alert('Invalid OTP. Please try again.');
+                        }
+                    });
+            } else {
+                alert('Please enter the OTP sent to your email');
+            }
+        });
+    </script>
+    <!-- Custom JS for Granim.js -->
+    <script src="/static/js/background_mobile.js"></script>
+</body>
+
+</html>

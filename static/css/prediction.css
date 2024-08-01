@@ -1,0 +1,193 @@
+.prediction-result {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.prediction-result h6 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.prediction-result ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.prediction-result ul div {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Style for individual crops */
+.prediction-result ul div:nth-child(odd) {
+  background-color: #f0f0f0;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-image: url("/static/prediction/prediction_background.webp");
+  background-size: cover;
+  /* Cover entire screen */
+  background-position: center;
+  /* Center background */
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.form-label,
+.form-range {
+  font-size: larger;
+}
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: 40px 0;
+  /* Default large padding */
+  font-size: x-small;
+}
+
+.footer a {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer a:hover {
+  color: #bbbbbb;
+  text-decoration: none;
+}
+
+.footer-column {
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Navbar Sigup/Signin Button Styles */
+.btn-signin,
+.btn-signup {
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-signin {
+    color: #fff;
+    background-color: transparent;
+    border-bottom: 2px solid transparent;
+}
+
+.btn-signin:hover,
+.btn-signin:focus {
+    color: #0dcaf0;
+    /* Bootstrap info color for example */
+    border-bottom: 2px solid #0dcaf0;
+    text-decoration: none;
+}
+
+.btn-signup {
+    color: #fff;
+    background-color: #0d6efd;
+    /* Bootstrap primary color */
+    border-radius: 20px;
+    padding: 0.375rem 0.75rem;
+}
+
+.btn-signup:hover,
+.btn-signup:focus {
+    background-color: #0b5ed7;
+    /* A slightly darker shade of primary color */
+    box-shadow: 0 0 10px rgba(13, 110, 253, 0.5);
+    color: #fff;
+}
+
+/* Logout button */
+.nav-link.logout-button {
+    display: inline-block;
+    color: #ffffff;
+    /* White text */
+    background-color: #0d6efd;
+    /* Bootstrap's danger color for a red theme */
+    border-radius: 20px;
+    padding: 0.375rem 0.75rem;
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+    text-align: center;
+    border: none;
+    /* Remove any default border */
+    cursor: pointer;
+    /* Cursor pointer to indicate clickable item */
+}
+
+.nav-link.logout-button:hover,
+.nav-link.logout-button:focus {
+    background-color: #0b5ed7;
+    /* A darker shade of blue for hover state */
+    color: #ffffff;
+    /* Ensure text color remains white */
+    text-decoration: none;
+    /* No underline on hover */
+    outline: none;
+    /* No focus outline */
+}
+
+.nav-link.logout-button i {
+    margin-right: 0.5rem;
+    /* Space between icon and text */
+}
+
+/* NavBar CSS */
+.navbar {
+  color: white;
+}
+
+/* Custom CSS for right-aligned dropdowns */
+.dropdown-submenu .dropdown-menu {
+  left: 100%;
+  top: 0;
+  margin-top: -1px;
+  /* Align the submenu with the parent menu item */
+  position: absolute;
+  /* Ensure the menu is positioned relative to its parent */
+}
+
+/* Hover effect to show the submenu */
+.dropdown-submenu:hover .dropdown-menu {
+  display: block;
+}
